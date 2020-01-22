@@ -18,7 +18,7 @@ class Rs232Conan(ConanFile):
     )
 
     def source(self):
-        self.run("git clone https://gitlab.com/Teuniz/RS-232.git")
+        self.run("git clone https://github.com/mfreiholz/RS-232.git")
         #self.run("cd RS-232 && git fetch --all --tags --prune && git checkout tags/v" + self.version)
 
     def build(self):
