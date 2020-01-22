@@ -6,5 +6,5 @@ conan_basic_setup()
 
 file(GLOB_RECURSE headers RS-232/rs232.h)
 file(GLOB_RECURSE sources RS-232/rs232.c)
-add_library(${PROJECT_NAME} SHARED ${headers} ${sources})
+add_library(${PROJECT_NAME} ${headers} ${sources})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/RS-232)
