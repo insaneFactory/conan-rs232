@@ -19,25 +19,11 @@ class Rs232Conan(ConanFile):
 
     def source(self):
         self.run("git clone https://gitlab.com/Teuniz/RS-232.git")
-        #self.run("cd aisparser && git fetch --all --tags --prune && git checkout tags/v" + self.version)
-
-    def build(self):
-        cmake = CMake(self)
-        cmake.configure(source_folder="hello")
-        cmake.build()
-
-        # Explicit way:
-        # self.run('cmake %s/hello %s'
-        #          % (self.source_folder, cmake.command_line))
-        # self.run("cmake --build . %s" % cmake.build_config)
-
-    #def configure(self):
-    #    del self.settings.compiler.libcxx
+        #self.run("cd RS-232 && git fetch --all --tags --prune && git checkout tags/v" + self.version)
 
     def build(self):
         cmake = CMake(self)
         cmake.definitions["CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS"] = True
-        #cmake.definitions["BuildShared"] = self.options.shared
         cmake.configure()
         cmake.build()
 
